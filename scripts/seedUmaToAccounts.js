@@ -3,8 +3,11 @@ const ethers = hre.ethers;
 const createERC20ContractInstance = require("./helpers/createERC20ContractInstance");
 
 async function main() {
-  const devAccount = "0x2210087BF0fD1C787e87d3a254F56a33D428312D";
   const foundationAccount = "0x7a3a1c2de64f20eb5e916f40d11b01c441b2a8dc";
+
+  const hardhatAccountZero = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266";
+  const hardhatAccountOne = "0x70997970c51812dc3a010c7d01b50e0d17dc79c8";
+  const hardhatAccountTwo = "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc";
 
   try {
     await hre.network.provider.request({
@@ -20,38 +23,29 @@ async function main() {
       "0x10000000000000000000000",
     ]);
 
-    const txOne = await signer.sendTransaction({
-      to: devAccount,
-      value: ethers.utils.parseEther("0.01"),
-    });
-
-    const txTwo = await erc20.transfer(
-      foundationAccount,
+    const txOne = await erc20.transfer(
+      hardhatAccountZero,
       ethers.utils.parseEther("20")
     );
 
-    const balanceFA = await erc20.balanceOf(foundationAccount);
-    console.log("balance FA", balanceFA);
+    const txTwo = await erc20.transfer(
+      hardhatAccountOne,
+      ethers.utils.parseEther("20")
+    );
+
+    const txThree = await erc20.transfer(
+      hardhatAccountTwo,
+      ethers.utils.parseEther("20")
+    );
+
     console.log("TXOne", txOne);
     console.log("TXTwo", txTwo);
+    console.log("TXThree", txThree);
 
     await hre.network.provider.request({
       method: "hardhat_stopImpersonatingAccount",
       params: [foundationAccount],
     });
-
-    await hre.network.provider.request({
-      method: "hardhat_impersonateAccount",
-      params: [devAccount],
-    });
-
-    const devSigner = await ethers.provider.getSigner(devAccount);
-
-    const erc20Dev = createERC20ContractInstance(devSigner, "1");
-
-    const balance = await erc20Dev.balanceOf(devAccount);
-
-    console.log("balance", balance);
   } catch (err) {
     console.log("err", err);
   }
