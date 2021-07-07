@@ -14,7 +14,9 @@ $ npm i
 
 If there are any artifacts / contracts to deploy for testing, run:
 
+```sh
 $ npx hardhat console
+```
 
 Next, open another terminal in this repo and run the following command to start the hardhat blockchain instance:
 
