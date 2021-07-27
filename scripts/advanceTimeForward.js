@@ -4,13 +4,20 @@ const ethers = hre.ethers;
 // KNOWN LSP Contract ends: 1630447200 (GMT: Tuesday, August 31, 2021 10:00:00 PM)
 // argv[2] should be the time you want to increase to.
 // EX: HARDHAT_NETWORK=localhost node ./scripts/advanceTimeForward.js 1630447300
+// const time = 1630447300;
 
 async function main() {
   // 2 months roughly
+  // const timeToAdvance = 5184000;
   const hardHatID = "31337";
-  // const time = 1630447300;
 
   try {
+    // const tx = await hre.network.provider.request({
+    //   jsonrpc: "2.0",
+    //   method: "evm_increaseTime",
+    //   params: [timeToAdvance],
+    //   id: hardHatID,
+    // });
     const tx = await hre.network.provider.request({
       jsonrpc: "2.0",
       method: "evm_mine",
