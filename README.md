@@ -2,20 +2,14 @@
 
 ## Intention
 
-<p>This repo is intended to have scripts available to allow for testing with a mainnet fork. As these dependencies are applicable to multiple projects potentially, and the dependencies are largely for development only, we believe it should be separate.</p>
+<p>This repo is intended to have scripts available to allow for testing with a mainnet fork. As these dependencies are applicable to multiple projects potentially, and since the dependencies are largely for development only, we believe it should be separate.</p>
 
 ## Get started
 
 To start, install packages with:
 
 ```sh
-$ npm i
-```
-
-If there are any artifacts / contracts to deploy for testing, run:
-
-```sh
-$ npx hardhat console
+$ yarn
 ```
 
 Next, open another terminal in this repo and run the following command to start the hardhat blockchain instance:
