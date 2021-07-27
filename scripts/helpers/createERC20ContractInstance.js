@@ -5,6 +5,7 @@ const VotingTokenArtifact = require("@uma/core/build/contracts/VotingToken.json"
 const abi = [
   "function balanceOf(address owner) view returns (uint)",
   "function transfer(address to, uint amount)",
+  "function allowance(address owner, address spender)",
   "event Transfer(address indexed from, address indexed to, uint amount)",
 ];
 
