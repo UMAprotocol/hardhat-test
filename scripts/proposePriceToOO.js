@@ -3,6 +3,11 @@ const ethers = hre.ethers;
 
 const createOOContractInstance = require("./helpers/createOOContractInstance");
 const createERC20ContractInstance = require("./helpers/createERC20ContractInstance");
+// Data for current known LSP address: 0xc43767f4592df265b4a9f1a398b97ff24f38c6a6
+// This contract expires August 31st, 2021.
+// priceIdentifier 0x554d415553440000000000000000000000000000000000000000000000000000
+// ancData 0x747761704c656e6774683a33363030
+// timeStamp 1630447200
 
 async function main() {
   // 2 months roughly
