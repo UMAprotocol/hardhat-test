@@ -31,7 +31,7 @@ async function main() {
   try {
     await hre.network.provider.request({
       method: "hardhat_impersonateAccount",
-      params: [LSP_ADDRESS],
+      params: [foundationAccount],
     });
 
     const signer = await ethers.provider.getSigner(foundationAccount);
@@ -48,6 +48,11 @@ async function main() {
     );
 
     console.log("allowanceTx", allowanceTX);
+
+    // await hre.network.provider.send("hardhat_setBalance", [
+    //   LSP_ADDRESS,
+    //   "0x10000000000000000000000000",
+    // ]);
 
     const optOracle = createOOContractInstance(signer, OOAddress);
     const proposePriceTX = await optOracle.proposePrice(
