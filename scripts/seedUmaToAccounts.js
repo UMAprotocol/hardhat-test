@@ -41,6 +41,7 @@ async function main() {
     console.log("TXOne", txOne);
     console.log("TXTwo", txTwo);
     console.log("TXThree", txThree);
+    // const txFour = await erc20.transfer()
 
     await hre.network.provider.request({
       method: "hardhat_stopImpersonatingAccount",
