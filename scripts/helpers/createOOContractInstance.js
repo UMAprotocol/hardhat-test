@@ -1,8 +1,8 @@
-const OOArtifact = require("@uma/core/build/contracts/OptimisticOracle.json");
+const {OptimisticOracleEthers__factory} = require("@uma/contracts-node")
 const ethers = require("ethers");
 
 function createOOContractInstance(signer, address) {
-  const contract = new ethers.Contract(address, OOArtifact.abi, signer);
+  const contract = OptimisticOracleEthers__factory.connect(address, signer);
 
   return contract;
 }
