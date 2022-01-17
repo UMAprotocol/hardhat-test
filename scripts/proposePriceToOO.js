@@ -20,13 +20,19 @@ async function main() {
 
   const foundationAccount = "0x7a3a1c2de64f20eb5e916f40d11b01c441b2a8dc";
 
-  // LSP data.
   const OOAddress = "0xc43767f4592df265b4a9f1a398b97ff24f38c6a6";
-  const LSP_ADDRESS = "0x372802d8A2D69bB43872a1AABe2bd403a0FafA1F";
+  const LSP_ADDRESS = "0x57C891D01605d456bBEa535c8E56EaAc4E2DFE11";
   const identifier =
-    "0x554d415553440000000000000000000000000000000000000000000000000000";
-  const ancData = "0x747761704c656e6774683a33363030";
-  const timestamp = "1630447200";
+    "0x7544414f5f4b50495f554d410000000000000000000000000000000000000000";
+  const ancData = "0x737461727454696d657374616d703a313633333034363430302c6d617842617365496e746567726174696f6e733a32302c6d6178426f6e7573496e746567726174696f6e733a352c626f6e75734d696e56616c75653a353030303030302c626f6e7573496e746567726174696f6e734d756c7469706c6965723a322e30302c666c6f6f72496e746567726174696f6e733a30"
+  const timestamp = "1640872800";
+  // LSP data.
+  // const OOAddress = "0xc43767f4592df265b4a9f1a398b97ff24f38c6a6";
+  // const LSP_ADDRESS = "0x372802d8A2D69bB43872a1AABe2bd403a0FafA1F";
+  // const identifier =
+  //   "0x554d415553440000000000000000000000000000000000000000000000000000";
+  // const ancData = "0x747761704c656e6774683a33363030";
+  // const timestamp = "1630447200";
 
   try {
     await hre.network.provider.request({
@@ -36,7 +42,7 @@ async function main() {
 
     const signer = await ethers.provider.getSigner(foundationAccount);
 
-    const erc20 = createERC20ContractInstance(signer, "1");
+    const erc20 = await createERC20ContractInstance(signer, "1");
     await hre.network.provider.send("hardhat_setBalance", [
       foundationAccount,
       "0x10000000000000000000000",

@@ -48,8 +48,9 @@ module.exports = {
   solidity: "0.8.4",
   networks: {
     hardhat: {
+      // chainId: 1,
       hardfork: "london",
-      gasPrice: "auto",
+      gasPrice: 100,
       initialBaseFeePerGas: 1_000_000_000,
     },
   },
