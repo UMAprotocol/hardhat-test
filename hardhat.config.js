@@ -68,7 +68,7 @@ module.exports = {
   https://rpc-mainnet.matic.quiknode.pro or
   https://matic-mainnet-full-rpc.bwarelabs.com
 */
-      url: "https://matic-mumbai.chainstacklabs.com",
+      url: "https://polygon-rpc.com/",
       accounts: [privateKey],
       // accountsBalance: "10000000000000000000000",
       // gasPrice: 8000000000, // default is 'auto' which breaks chains without the london hardfork
