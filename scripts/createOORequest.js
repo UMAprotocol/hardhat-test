@@ -29,23 +29,21 @@ async function main() {
     const tx = await erc20.approve(ooAddress, MAX_INT);
     console.log("tx", tx);
     const oo = createOOContractInstance(signer, ooAddress);
-    // console.log("ooInstance", ooInstance);
     const toIdenHex = web3.utils.utf8ToHex("UMAUSD");
     const identifier = web3.utils.padRight(toIdenHex, 64);
-    const timestamp = Math.floor(Date.now() / 1000) - 1000;
+    const timestamp = Number(process.argv[2]);
     const ancData = "0x";
     const currency = "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828";
     const reward = toWei("1").toString();
 
-    console.log("identifier", identifier, identifier.length);
-    const res = await oo.requestPrice(
+    const requestTx = await oo.requestPrice(
       identifier,
       timestamp,
       ancData,
       currency,
       reward
     );
-    console.log("res", res);
+    console.log("requestTx", requestTx);
   } catch (err) {
     console.log("err", err);
   }
