@@ -31,6 +31,7 @@ async function main() {
     const oo = createOOContractInstance(signer, ooAddress);
     const toIdenHex = web3.utils.utf8ToHex("UMAUSD");
     const identifier = web3.utils.padRight(toIdenHex, 64);
+    console.log("identifier", identifier);
     const timestamp = Number(process.argv[2]);
     const ancData = "0x";
     const currency = "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828";
