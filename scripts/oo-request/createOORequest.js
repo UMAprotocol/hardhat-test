@@ -1,11 +1,11 @@
 const hre = require("hardhat");
 const ethers = hre.ethers;
-const createOOContractInstance = require("./helpers/createOOContractInstance");
-const createERC20ContractInstance = require("./helpers/createERC20ContractInstance");
+const createOOContractInstance = require("../helpers/createOOContractInstance");
+const createERC20ContractInstance = require("../helpers/createERC20ContractInstance");
 
 const ethersLib = require("ethers");
 const web3 = require("web3");
-const toWei = require("./helpers/toWei");
+const toWei = require("../helpers/toWei");
 
 const MAX_INT = ethers.constants.MaxUint256;
 
