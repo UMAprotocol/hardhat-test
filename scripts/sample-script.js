@@ -3,8 +3,6 @@
 //
 // When running the script with `hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
-const BridgeAdmin = require("@uma/core/contracts-ovm/insured-bridge/implementation/BridgeAdmin.sol");
-
 const hre = require("hardhat");
 const account = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
 
@@ -21,15 +19,6 @@ async function main() {
   const greeter = await Greeter.deploy("Hello, Hardhat!");
 
   await greeter.deployed();
-
-  console.log("Greeter deployed to:", greeter.address);
-
-  const Bridge = await hre.ethers.getContractFactory("BridgeDepositBox");
-  const bridge = await Bridge.deploy(1, [account], 1, 0, 100000);
-
-  await bridge.deployed();
-
-  console.log("Bridge deployed to:", bridge.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

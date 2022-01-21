@@ -57,25 +57,3 @@ Account #1: 0x70997970c51812dc3a010c7d01b50e0d17dc79c8 (10000 ETH)
 Account #2: 0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc (10000 ETH)
 
 Add these accounts in MetaMask (private keys are in your terminal), then add UMA's contract address to assets, and you should see the UMA transfered to these accounts.
-
-## Creating Price Request for testing
-
-- After booting up the local hardhat node above, do the following to test:
-
-1. Create request: HARDHAT_NETWORK=localhost node ./scripts/oo-request/createOORequest.js <unix-timestamp-in-past>
-
-2. Propose price: HARDHAT_NETWORK=localhost node ./scripts/oo-request/proposePrice.js <unix-timestamp-in-past>
-
-To Dispute do the following, otherwise skip to step 4:
-
-3a) Seed Uma to accounts, as this is the current testing collateral: HARDHAT_NETWORK=localhost node ./scripts/general/seedUmaToAccounts.js
-
-3b) HARDHAT_NETWORK=localhost node ./scripts/oo-request/disputePrice <unix-timestamp-in-past>
-
-This send it to the voting infrastructure
-
-3c) TODO: Create scripts for commit, reveal, snapshot cycle of OO.
-
-4a) Advance time forward beyond liveness and/or voting cycle: HARDHAT_NETWORK=localhost node ./scripts/general/advanceTimeForward.js <time-in-future>
-
-4b) Settle price: HARDHAT_NETWORK=localhost node ./scripts/oo-request/settlePrice.js <unix-timestamp-in-past>
