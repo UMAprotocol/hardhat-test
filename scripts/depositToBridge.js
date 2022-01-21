@@ -1,1 +1,0 @@
-const maticChainID = 137;

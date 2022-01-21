@@ -10,10 +10,8 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@eth-optimism/contracts": "^0.4.10",
     "@openzeppelin/contracts": "^4.3.1",
     "@uma/contracts-node": "^0.1.17",
-    "@uma/core": "^2.4.0",
-    "web3": "^1.7.0"
+    "@uma/core": "^2.4.0"
   }
 }
