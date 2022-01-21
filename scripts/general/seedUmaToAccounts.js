@@ -1,6 +1,6 @@
 const hre = require("hardhat");
 const ethers = hre.ethers;
-const createERC20ContractInstance = require("./helpers/createERC20ContractInstance");
+const createERC20ContractInstance = require("../helpers/createERC20ContractInstance");
 const ethersLib = require("ethers");
 
 const sushiAddress = "0x6B3595068778DD592e39A122f4f5a5cF09C90fE2";
