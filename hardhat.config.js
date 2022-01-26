@@ -1,8 +1,8 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
-const fs = require("fs");
+// const fs = require("fs");
 
-const privateKey = fs.readFileSync(".secret").toString().trim();
+// const privateKey = fs.readFileSync(".secret").toString().trim();
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -51,7 +51,7 @@ module.exports = {
   solidity: "0.8.4",
   networks: {
     hardhat: {
-      // chainId: 1,
+      chainId: 1337,
       hardfork: "london",
       gasPrice: 100,
       initialBaseFeePerGas: 1_000_000_000,
@@ -69,7 +69,7 @@ module.exports = {
   https://matic-mainnet-full-rpc.bwarelabs.com
 */
       url: "https://polygon-rpc.com/",
-      accounts: [privateKey],
+      accounts: [],
       // accountsBalance: "10000000000000000000000",
       // gasPrice: 8000000000, // default is 'auto' which breaks chains without the london hardfork
     },
