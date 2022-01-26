@@ -44,17 +44,17 @@ async function main() {
 
     const txOne = await erc20.transfer(
       hardhatAccountZero,
-      ethers.utils.parseEther("20")
+      ethers.utils.parseEther("2000")
     );
 
     const txTwo = await erc20.transfer(
       hardhatAccountOne,
-      ethers.utils.parseEther("20")
+      ethers.utils.parseEther("2000")
     );
 
     const txThree = await erc20.transfer(
       hardhatAccountTwo,
-      ethers.utils.parseEther("20")
+      ethers.utils.parseEther("2000")
     );
 
     console.log("TXOne", txOne);

@@ -35,7 +35,7 @@ async function main() {
     const timestamp = Number(process.argv[2]);
     const ancData = "0x";
     const currency = "0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828";
-    const reward = toWei("1").toString();
+    const reward = toWei("1000.25").toString();
 
     const requestTx = await oo.requestPrice(
       identifier,
