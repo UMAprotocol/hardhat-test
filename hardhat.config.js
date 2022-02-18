@@ -47,11 +47,12 @@ task("sendEthToDevAccount", "Sends eth to the dev accounts", async () => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
 module.exports = {
   solidity: "0.8.4",
   networks: {
     hardhat: {
-      chainId: process.env.HARDHAT_CHAIN_ID || 31337,
+      chainId: 1337,
       hardfork: "london",
       gasPrice: 100,
       initialBaseFeePerGas: 1_000_000_000,
